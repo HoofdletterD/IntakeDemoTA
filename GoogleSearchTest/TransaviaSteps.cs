@@ -105,7 +105,6 @@ namespace Transavia
             driver.FindElement(By.Id("routeSelection_DepartureStation-input")).SendKeys(Departure);
         }
 
-
         [Then(@"the user sees the page with the title ""(.*)""")]
         public void ThenTheUserSeesThePageWithTheTitle(string Title)
         {
