@@ -120,11 +120,8 @@ namespace Transavia
             Assert.AreEqual(true, driver.FindElement(By.XPath("//div[contains(@class,'c-flight-results-panel')]")).Displayed);
             // False Assertion doesn't work yet...
             //Assert.AreEqual(false, driver.FindElement(By.XPath("//div[contains(@class,'notification-error')]")).Displayed;
-
-
-            //TEST Voor GITHUB check: Komt dit aan?
         }
-
+        
 
         [AfterScenario]
         public void TearDown()
