@@ -73,7 +73,7 @@ Scenario Outline: Homepage-003: Customer wants to find a flight
 #	Then the user sees the page with the title "Booking.com"
 #
 #
-#		@Homepage @Flightstatus @Regression
+#	@Homepage @Flightstatus @Regression
 #Scenario outline: Homepage-008: Customer wants to see the flight status of his upcoming flight and he doesn't have his flightnumber
 #	Given a user is on the Transavia.com homepage
 #	When the user clicks on "Vluchtstatus" in "Secondary Menu"
