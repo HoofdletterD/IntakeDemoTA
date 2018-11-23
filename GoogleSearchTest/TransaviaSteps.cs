@@ -30,6 +30,9 @@ namespace Transavia
             driver.Manage().Window.Maximize();
         }
 
+
+        //TODO: Add Before steps.
+
         [Given(@"a user is on the Transavia.com homepage")]
         public void AuserisontheTransaviacomhomepage()
         {
@@ -57,6 +60,7 @@ namespace Transavia
             driver.FindElement(By.Id("newsletterSubscription_EmailAddress")).Click();
             driver.FindElement(By.Id("newsletterSubscription_EmailAddress")).Clear();
             driver.FindElement(By.Id("newsletterSubscription_EmailAddress")).SendKeys(text);
+            //TODO: Add Element Repo/Page Objects to enhance reusability
         }
 
 
@@ -74,6 +78,7 @@ namespace Transavia
         {
             String message = "We hebben een e-mail naar je gestuurd om de inschrijving voor onze nieuwsbrief te bevestigen.";
             //Wait on Loading Animation
+            //TODO: Fluent Wait (or failing that: Explicit wait)
             Thread.Sleep(3000);
             //Assert presence of Success Notification and check Message
             Assert.AreEqual(true, driver.FindElement(By.XPath("//div[contains(@class,'notification-success')]")).Displayed);
@@ -83,7 +88,8 @@ namespace Transavia
 
         [When(@"the user searches for a flight for 1 Volwassene Leaving from ""(.*)"" To ""(.*)"" on ""(.*)"" and back on ""(.*)""")]
         public void WhenTheUserSearchesForAFlightForOneAdultsLeavingFromToOnAndBackOn(string Departure, string Arrival, string OutboundDate, string ReturnFlightDate)
-        {            
+        {   //TODO: Add Element Repo/Page Objects to enhance reusability
+
             //Fill in ARRIVAL field
             driver.FindElement(By.Id("routeSelection_ArrivalStation-input")).Click();
             driver.FindElement(By.Id("routeSelection_ArrivalStation-input")).Clear();
@@ -117,7 +123,7 @@ namespace Transavia
         public void ThenTheUserCanSeeSearchResults()
         {
             Assert.AreEqual(true, driver.FindElement(By.XPath("//div[contains(@class,'c-flight-results-panel')]")).Displayed);
-            // False Assertion doesn't work yet...
+            //TODO: Add code for Assert:False.
             //Assert.AreEqual(false, driver.FindElement(By.XPath("//div[contains(@class,'notification-error')]")).Displayed;
         }
         
